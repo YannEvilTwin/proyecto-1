@@ -1,0 +1,84 @@
+@import "colors";
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 10px;
+    background-color: $color-2;
+
+    li {
+        display: inline-block;
+        margin: 10px;
+
+        a {
+            text-decoration: none;
+            color: $color-1;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.encabezado {
+    font-family: 'Fahkwang', sans-serif;
+    color: $color-1;
+    text-align: center;
+    background-color: $color-2;
+    border: $color-2 2px solid;
+    padding: 10px;
+}
+
+.video {
+    display: flex;
+    background-color: $color-1;
+    float: left;
+    padding: 1em;
+    width: 100%;
+    min-height: 1px
+}
+
+.video2 {
+    display: flex;
+    background-color: $color-1;
+    float: right;
+    padding: 1em;
+    width: 100%;
+    min-height: 1px
+}
+
+
+h2 {
+    font-family: 'Fahkwang', sans-serif;
+    font-size: 28px;
+    color: $color-1;
+    background-color: $color-2;
+    text-align: center;
+    padding: 20px;
+
+}
+
+.noticias {
+    font-family: 'Fahkwang', sans-serif;
+    font-size: 20px;
+    color: $color-2;
+    background-color: $color-1;
+    text-align: center;
+    border: $color-3 2px solid;
+    padding: 10px;
+
+}
+
+h3 {
+    font-family: 'Fahkwang', sans-serif;
+    font-size: 30px;
+    color: $color-1;
+    background-color: $color-2;
+    text-align: center;
+    padding: 25px;
+
+}
+

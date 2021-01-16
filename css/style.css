@@ -1,0 +1,76 @@
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 10px;
+  background-color: black;
+}
+ul li {
+  display: inline-block;
+  margin: 10px;
+}
+ul li a {
+  text-decoration: none;
+  color: white;
+}
+ul li a:hover {
+  text-decoration: underline;
+}
+
+.encabezado {
+  font-family: "Fahkwang", sans-serif;
+  color: white;
+  text-align: center;
+  background-color: black;
+  border: black 2px solid;
+  padding: 10px;
+}
+
+.video {
+  display: flex;
+  background-color: white;
+  float: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px;
+}
+
+.video2 {
+  display: flex;
+  background-color: white;
+  float: right;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px;
+}
+
+h2 {
+  font-family: "Fahkwang", sans-serif;
+  font-size: 28px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.noticias {
+  font-family: "Fahkwang", sans-serif;
+  font-size: 20px;
+  color: black;
+  background-color: white;
+  text-align: center;
+  border: darkblue 2px solid;
+  padding: 10px;
+}
+
+h3 {
+  font-family: "Fahkwang", sans-serif;
+  font-size: 30px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 25px;
+}
+
+/*# sourceMappingURL=style.css.map */
