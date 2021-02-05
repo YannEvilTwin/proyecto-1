@@ -1,76 +1,796 @@
-ul {
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*Navbar*/
+.menu {
   list-style: none;
-  display: flex;
-  justify-content: space-around;
-  margin: 20px;
-  padding: 10px;
-  background-color: black;
-}
-ul li {
-  display: inline-block;
-  margin: 10px;
-}
-ul li a {
-  text-decoration: none;
-  color: white;
-}
-ul li a:hover {
-  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 120px;
+  margin: auto;
+  position: relative;
+  background-color: #2c3e50;
+  z-index: 7;
 }
 
-.encabezado {
-  font-family: "Fahkwang", sans-serif;
-  color: white;
-  text-align: center;
-  background-color: black;
-  border: black 2px solid;
-  padding: 10px;
-}
-
-.video {
-  display: flex;
-  background-color: white;
+.menu li {
   float: left;
-  padding: 1em;
-  width: 100%;
-  min-height: 1px;
+  width: 25%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.video2 {
+.menu a {
   display: flex;
-  background-color: white;
-  float: right;
-  padding: 1em;
   width: 100%;
-  min-height: 1px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-size: 22px;
+  z-index: 9;
 }
 
-h2 {
-  font-family: "Fahkwang", sans-serif;
-  font-size: 28px;
-  color: white;
-  background-color: black;
-  text-align: center;
-  padding: 20px;
+a.active {
+  background-color: #e74c3c;
+  pointer-events: none;
 }
 
-.noticias {
-  font-family: "Fahkwang", sans-serif;
-  font-size: 20px;
-  color: black;
-  background-color: white;
-  text-align: center;
-  border: darkblue 2px solid;
+li.slider {
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #e74c3c;
+  z-index: 8;
+  transition: left 0.4s, background-color 0.4s;
+}
+
+.menu li:nth-child(1):hover~.slider,
+.menu li:nth-child(1):focus~.slider,
+.menu li:nth-child(1):active~.slider {
+  left: 0;
+  background-color: #3498db;
+}
+
+.menu li:nth-child(2):hover~.slider,
+.menu li:nth-child(2):focus~.slider,
+.menu li:nth-child(2):active~.slider {
+  left: 25%;
+  background-color: #9b59b6;
+}
+
+.menu li:nth-child(3):hover~.slider,
+.menu li:nth-child(3):focus~.slider,
+.menu li:nth-child(3):active~.slider {
+  left: 50%;
+  background-color: #e67e22;
+}
+
+.menu li:nth-child(4):hover~.slider,
+.menu li:nth-child(4):focus~.slider,
+.menu li:nth-child(4):active~.slider {
+  left: 75%;
+  background-color: #16a085;
+}
+
+/* Carrusel */
+.image-style1 {
+  background-size: cover;
+}
+
+.image-style2 {
+  background-size: cover;
+}
+
+.image-style3 {
+  background-size: cover;
+}
+
+/* burbujas */
+.burbuja {
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.3;
+  position: absolute;
+  bottom: -150;
+  animation: burbujas 3s linear infinite;
+}
+
+.burbuja:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  left: 5%;
+  animation-duration: 3s;
+  animation-delay: 3s;
+}
+
+.burbuja:nth-child(2) {
+  width: 100px;
+  height: 100px;
+  left: 35%;
+  animation-duration: 3s;
+  animation-delay: 5s;
+}
+
+.burbuja:nth-child(3) {
+  width: 20px;
+  height: 20px;
+  left: 15%;
+  animation-duration: 1.5s;
+  animation-delay: 7s;
+}
+
+.burbuja:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  left: 90%;
+  animation-duration: 6s;
+  animation-delay: 3s;
+}
+
+.burbuja:nth-child(5) {
+  width: 70px;
+  height: 70px;
+  left: 65%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+.burbuja:nth-child(6) {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  animation-duration: 4s;
+  animation-delay: 5s;
+}
+
+.burbuja:nth-child(7) {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  animation-duration: 4s;
+  animation-delay: 5s;
+}
+
+.burbuja:nth-child(8) {
+  width: 100;
+  height: 100px;
+  left: 52%;
+  animation-duration: 5s;
+  animation-delay: 5s;
+}
+
+.burbuja:nth-child(9) {
+  width: 65px;
+  height: 65px;
+  left: 51%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+
+.burbuja:nth-child(10) {
+  width: 40px;
+  height: 40px;
+  left: 35%;
+  animation-duration: 3s;
+  animation-delay: 4s;
+}
+
+@keyframes burbujas {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  30% {
+    transform: translateX(30px);
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+  }
+}
+
+@keyframes movimiento {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(30px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .burbujas {
+    display: none;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .burbujas {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .burbujas {
+    display: none;
+  }
+}
+
+/* Tienda */
+/* Titulo tienda */
+h1 {
+  position: relative;
   padding: 10px;
+  margin: 0;
+  font-family: roboto;
+  font-weight: 300;
+  font-size: 20px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  background-image: url(../Imagenes/valorant-bg.png);
 }
 
-h3 {
-  font-family: "Fahkwang", sans-serif;
-  font-size: 30px;
-  color: white;
-  background-color: black;
+h1 span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+
+h1 em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.nine h1 {
   text-align: center;
-  padding: 25px;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #222;
+  letter-spacing: 1px;
+  font-family: roboto;
+  font-weight: 400;
+}
+
+.nine h1 span {
+  margin-top: 5px;
+  font-size: 15px;
+  color: #444;
+  word-spacing: 1px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.nine h1 span:after,
+.nine h1 span:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  height: 5px;
+}
+
+/* Fin titulo tienda */
+.container {
+  background-image: url();
+  margin: 0 auto;
+}
+
+.card-box {
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px 0px #C5C5C5;
+  margin-bottom: 30px;
+  float: left;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card-box .card-thumbnail {
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.card-box .card-thumbnail:hover {
+  transform: scale(1.2);
+}
+
+.card-box h3 a {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#tienda {
+  background-image: url(../Imagenes/valorant-bg.png);
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+/* Titulo Integrantes */
+h3 {
+  position: relative;
+  padding: 10px;
+  margin: 0;
+  font-family: roboto;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+h3 span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+
+h3 em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.seven h3 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+  color: #c50000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 10px;
+  align-items: center;
+  background-image: url(../Imagenes/valorant-bg2.png);
+}
+
+.seven h3:after,
+.seven h3:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #c50000;
+  border-top: 1px solid #c50000;
+  height: 5px;
+}
+
+/* Integrantes CSS */
+.integrantes {
+  width: 100%;
+  padding: 20px;
+  display: table;
+  margin: 0;
+  max-width: 100%;
+  background-image: url(../Imagenes/valorant-bg1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+ul.acordeon * {
+  font-family: roboto;
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Contenedor general */
+ul.acordeon {
+  width: 100%;
+  /* Personalizar ancho total */
+  overflow: hidden;
+  padding: 0;
+  background: #8F2250;
+  text-align: center;
+  list-style: none;
+  font-size: 0;
+  box-shadow: 0 0 10px #333;
+  margin: 0;
+}
+
+ul.acordeon {
+  background-image: url(../Imagenes/valorant-bg2.png);
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+/* Cada elemento */
+.kotzen {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  /* IE7 */
+  width: 10%;
+  height: 0;
+  padding-bottom: 40%;
+  /* Ratio aspecto imagen = (height*X)/width */
+  background-image: url(../Imagenes/sage.png);
+  text-align: right;
+  box-shadow: -2px 0px 8px #999;
+  background-repeat: no-repeat;
+}
+
+.ginzo {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  /* IE7 */
+  width: 10%;
+  height: 0;
+  padding-bottom: 40%;
+  /* Ratio aspecto imagen = (height*X)/width */
+  background-image: url(../Imagenes/brim.png);
+  text-align: center;
+  box-shadow: -2px 0px 8px #999;
+  background-repeat: no-repeat;
+}
+
+.sevko {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 10%;
+  height: 0;
+  padding-bottom: 40%;
+  background-image: url(../Imagenes/jett.png);
+  text-align: center;
+  box-shadow: -2px 0px 8px #999;
+  background-repeat: no-repeat;
+}
+
+.jey {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 10%;
+  height: 0;
+  padding-bottom: 40%;
+  background-image: url(../Imagenes/kill.png);
+  text-align: center;
+  box-shadow: -2px 0px 8px #999;
+  background-repeat: no-repeat;
+}
+
+.strok {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 10%;
+  height: 0;
+  padding-bottom: 40%;
+  background-image: url(../Imagenes/reyna.png);
+  text-align: center;
+  box-shadow: -2px 0px 8px #999;
+  background-repeat: no-repeat;
+}
+
+/* Títulos pestañas */
+ul.acordeon li h4 {
+  position: relative;
+  top: 5%;
+  z-index: 1;
+  margin: 0;
+  font-size: 18px;
+  text-align: left;
+  text-transform: uppercase;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: 10% 120%;
+  -moz-transform-origin: 10% 120%;
+  transform-origin: 10% 120%;
+  white-space: nowrap;
+  color: transparent;
+}
+
+ul.acordeon li .texto {
+  display: block;
+  position: absolute;
+  font-family: roboto;
+  font-size: 1.5rem;
+  opacity: 0;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  margin-left: 10px;
+  top: 30%;
+}
+
+ul.acordeon li:hover .texto {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Contenido inicialmente oculto */
+ul.acordeon li a,
+ul.acordeon li img {
+  position: absolute;
+  bottom: auto;
+  right: 0;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  /* IE7 */
+  width: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* Hover: Desplegamos elemento aumentando su ancho */
+ul.acordeon li:hover {
+  width: 60%;
+  /* 100 - 10*(nºelem-1) // X=60 para ratio imagen */
+  background-color: transparent;
+}
+
+/* Hover: Hacemos que el título recupere la horizontal y le ponemos un fondo */
+ul.acordeon li:hover h4 {
+  padding-left: 10px;
+  background: rgba(248, 28, 39, 0.8);
+  color: #eee;
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+}
+
+/* Hover: Expandimos el contenido */
+ul.acordeon li:hover a,
+ul.acordeon li:hover a img {
+  width: 100%;
+}
+
+/* Ajustes para resoluciones pequeñas */
+@media (max-width: 600px) {
+  ul.acordeon li h4 {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+
+/* VARIACIONES PARA CONSEGUIR QUE EL MENU OCUPE INICIALMENTE TODO EL ANCHO */
+ul.acordeon li {
+  width: 20%;
+}
+
+ul.acordeon:hover li {
+  width: 10%;
+}
+
+ul.acordeon li:hover {
+  width: 60%;
+}
+
+/* Footer */
+* {
+  font-family: Roboto;
+}
+
+.foot {
+  background-image: url(../Imagenes/valorant-bg2.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.footer-distributed {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px;
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
+}
+
+/* Footer left */
+.footer-distributed .footer-left {
+  float: left;
+}
+
+.footer-distributed h4 {
+  color: red;
+  font: normal 36px "roboto", cursive;
+  margin: 0 0 10px;
+}
+
+.footer-distributed h4 span {
+  color: #ff9900;
+}
+
+/* Footer links */
+.footer-distributed .footer-links {
+  color: #807878;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+  color: #807878;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer social icons */
+.footer-distributed .footer-icons {
+  margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #f0f7ff00;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ff9900;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* Footer Right */
+.footer-distributed .footer-right {
+  float: right;
+}
+
+.footer-distributed .footer-right p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 15px 42px 0 0;
+  color: #ff9900;
+  font-weight: bold;
+}
+
+/* The contact form */
+.footer-distributed form {
+  display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea {
+  display: block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: black;
+  box-shadow: 0 1px 0 0 black;
+  border: none;
+  resize: none;
+  font: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  color: #ff9900;
+  width: 400px;
+  padding: 18px;
+}
+
+.footer-distributed form input {
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+.footer-distributed form textarea {
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.footer-distributed form button {
+  border-radius: 3px;
+  background-color: black;
+  color: #ff9900;
+  border: 0;
+  padding: 15px 50px;
+  font-weight: bold;
+  float: right;
+}
+
+@media (max-width: 1000px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-company-name {
+    font-size: 12px;
+  }
+
+  .footer-distributed form input,
+  .footer-distributed form textarea {
+    width: 250px;
+  }
+
+  .footer-distributed form button {
+    padding: 10px 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer-distributed {
+    padding: 30px;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    float: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .footer-distributed .footer-left {
+    margin-bottom: 40px;
+  }
+
+  .footer-distributed form {
+    margin-top: 30px;
+  }
+
+  .footer-distributed form {
+    display: block;
+  }
+
+  .footer-distributed form button {
+    float: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
